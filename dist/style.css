@@ -25,7 +25,7 @@ body {
   --secondary: #f0be4a;
   --tertiary: #e19ee1;
   --error: #dc3a4e;
-  --positive: #519e5e;
+  --positive: #519e5e; 
   --text: #151d22;
   --text-variant: #7b7e80;
   --unselected: #808b97;
@@ -147,4 +147,31 @@ aside {
   border-radius: 8px;
   cursor: default;
   font-weight: 700;
+}
+
+/* new project form */
+
+.form__text.new-proj {
+  all: unset;
+  outline: var(--unselected) 1.5px solid;
+  border-radius: 4px;
+  flex: 1;
+  padding-right: calc(2rem + 0.5rem);
+  padding-left: 0.5rem;
+}
+
+.form__btn.new-proj {
+  all: unset;
+  align-self: center;
+  width: 2rem;
+  position: absolute;
+  right: 0.5rem;
+  cursor: pointer;
+}
+
+form.new-proj {
+  display: flex;
+  gap: 4px;
+  height: 2.5rem;
+  position: relative;
 }
