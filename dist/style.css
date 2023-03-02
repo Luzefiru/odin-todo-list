@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+:root {
+  --surface: #fefeff;
+  --surface-variant: #fafcff;
+  --primary: #3226ba;
+  --primary-variant: #342e8f;
+  --secondary: #f0be4a;
+  --tertiary: #e19ee1;
+  --error: #dc3a4e;
+  --positive: #519e5e;
+  --text: #151d22;
+  --text-variant: #7b7e80;
+  --unselected: #808b97;
+}
