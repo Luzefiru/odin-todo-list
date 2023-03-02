@@ -93,25 +93,41 @@ header {
 aside {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.2rem;
+  padding: 2rem 1.25rem;
 }
 
-.heading {
-  margin-bottom: 1.5rem;
+.category {
+  margin-bottom: 1.25rem;
 }
 
-.heading--projects {
+.category--projects {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.aside__heading {
+.aside__category {
   color: var(--text);
   font-size: 1.5rem;
   font-weight: 700;
+  margin-right: 2rem;
 }
 
-.aside__heading__btn {
+.aside__category--projects__btn {
   cursor: pointer;
+}
+
+.aside__category__project {
+  all: unset;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.aside__category__project > img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.8rem;
 }
