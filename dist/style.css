@@ -8,8 +8,13 @@
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body, html {
+html {
   height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
 }
 
 :root {
@@ -24,4 +29,26 @@ body, html {
   --text: #151d22;
   --text-variant: #7b7e80;
   --unselected: #808b97;
+}
+
+/* debug */
+* {
+  border: 1px red dashed;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+header {
+  height: 64px;
+}
+
+main {
+  height: calc(100% - 64px - 24px) /* -header -footer */
+}
+
+footer {
+  height: 24px;
 }
