@@ -19,7 +19,7 @@ body {
 
 :root {
   --surface: #fefeff;
-  --surface-variant: #f0f6ff;
+  --surface-variant: #ebedff;
   --primary: #3226ba;
   --primary-variant: #342e8f;
   --secondary: #f0be4a;
@@ -29,6 +29,7 @@ body {
   --text: #151d22;
   --text-variant: #7b7e80;
   --unselected: #808b97;
+  --selected: rgb(204, 209, 255);
 }
 
 /* * {
@@ -97,7 +98,7 @@ aside {
 }
 
 .category {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .category--projects {
@@ -124,10 +125,26 @@ aside {
   padding: 0 1rem;
   font-weight: 500;
   color: var(--text);
+  padding: 0.55rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 .aside__category__project > img {
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 0.8rem;
+}
+
+.aside__category__project:hover {
+  background-color: var(--surface-variant);
+  border-radius: 8px;
+}
+
+/* style for selected projects */
+.aside__category__project.project--selected {
+  background-color: var(--selected);
+  border-radius: 8px;
+  cursor: default;
+  font-weight: 700;
 }
