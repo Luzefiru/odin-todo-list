@@ -1,0 +1,18 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "airbnb-base",
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "ignorePatterns": ["webpack.config.js"],
+    "rules": {
+        "no-console": "off", // ignores console.log formatting
+        "linebreak-style": 0 // ignores LF vs CRLF errors
+    }
+}
