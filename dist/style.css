@@ -154,7 +154,7 @@ aside {
 .form__text.new-proj {
   all: unset;
   outline: var(--unselected) 1.5px solid;
-  border-radius: 4px;
+  border-radius: 12px;
   flex: 1;
   padding-right: calc(2rem + 0.5rem);
   padding-left: 0.5rem;
