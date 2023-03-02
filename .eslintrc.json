@@ -16,6 +16,7 @@
         "linebreak-style": "off", // ignores LF vs CRLF errors
         "func-names": "off",
         "no-unused-vars": "off",
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "wrap-iife": "off"
     }
 }

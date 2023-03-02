@@ -1,16 +1,19 @@
-function todoItem(title, description, dueDate, notes) {
+const Todo = (function () {
   // a unique identifier is generated every time a todo item is made
   let id = 0;
-  return {
-    id: id++,
-    title,
-    description,
-    dueDate,
-    notes,
-  };
-}
+  function createTodoItem(title, description, dueDate, notes) {
+    return {
+      id: id++,
+      title,
+      description,
+      dueDate,
+      notes,
+    };
+  }
+  return { createTodoItem };
+}());
 
-function project(name) {
+function createProject(name) {
   // array containing the todo list items for a project category
   let todoList = [];
   // returns the todo list array
@@ -45,3 +48,9 @@ function project(name) {
     sortList,
   };
 }
+
+const eatFood = Todo.createTodoItem('Eat Food', 'eat food in the diner', 5, 'please do it');
+const sleep = Todo.createTodoItem('Sleep', 'sleepy time', 1, 'weeee');
+const home = createProject('Home');
+home.addListItem(eatFood);
+home.addListItem(sleep);
