@@ -19,7 +19,7 @@ body {
 
 :root {
   --surface: #fefeff;
-  --surface-variant: #fafcff;
+  --surface-variant: #f0f6ff;
   --primary: #3226ba;
   --primary-variant: #342e8f;
   --secondary: #f0be4a;
@@ -37,18 +37,28 @@ body {
 }
 
 main {
+  height: calc(100% - 64px - 24px); /* -header -footer */
   display: grid;
   grid-template-columns: 1fr 5fr;
+  background-color: var(--surface-variant);
+}
+
+aside {
+  background-color: var(--surface);
 }
 
 header {
   height: 64px;
+  background-color: var(--surface);
 }
 
-main {
-  height: calc(100% - 64px - 24px) /* -header -footer */
-}
-
-footer {
+footer,
+footer * {
   height: 24px;
+  background-color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text);
 }
