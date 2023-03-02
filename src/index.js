@@ -1,7 +1,7 @@
 const Todo = (function () {
   // a unique identifier is generated every time a todo item is made
   let id = 0;
-  function createTodoItem(title, description, dueDate, notes) {
+  const createTodoItem = function (title, description, dueDate, notes) {
     return {
       id: id++,
       title,
@@ -9,7 +9,7 @@ const Todo = (function () {
       dueDate,
       notes,
     };
-  }
+  };
   return { createTodoItem };
 }());
 
