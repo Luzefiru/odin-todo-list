@@ -5,6 +5,29 @@ const ViewModule = (function () {
   const renderProjectTasks = function () {
     const contentContainer = document.querySelector('.content');
     const selectedProjectTodoList = ProjectDataHandler.getSelectedProject().getTodo();
+    for (let ind = 0; ind < selectedProjectTodoList.length; ind++) {
+      const { title, description, dueDate } = selectedProjectTodoList;
+      const taskCardInnerHTML = `<div class="card--task" index="${ind}">
+        <div class="task__title">${title}</div>
+        <button class="task__details-btn modal-open">DETAILS</button>
+        <div class="task__due-date">${dueDate}</div>
+        <button class="task__delete-btn"></button>
+      
+        <dialog class="task--modal hidden">
+          <button class="task--modal__exit-btn modal-close"></button>
+          <div class="task--modal__title">
+            ${title}
+          </div>
+          <div class="task--modal__description">
+           ${description}
+          </div>
+          <div class="task--modal__due-date">
+            ${dueDate}
+          </div>
+        </dialog>
+        </div>`;
+      console.log(ind, selectedProjectTodoList[ind], taskCardInnerHTML);
+    }
   };
   const _renderAddTaskPrompt = function () {
     // disallows multiple form prompts to be rendered on the same window
@@ -59,9 +82,7 @@ const ViewModule = (function () {
       _renderAddTaskPrompt();
     });
   };
-  
-
-  return { initializeAddATaskButton, renderProjectTasks };
+  return { renderProjectTasks, initializeAddATaskButton };
 })();
 
 export default ViewModule;
