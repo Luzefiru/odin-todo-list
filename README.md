@@ -3,9 +3,10 @@ A to-do list web application built with modular JavaScript code to practice Obje
 
 ## Completed
 - "Add a Task" button successfully makes a form prompt & submits the data into the internal model module
+- Refresh & render the Selected Project's tasks inside the `.contents` container everytime we submit a task
 
 ## TODO
-- Refresh & render the Selected Project's tasks inside the `.contents` container everytime we submit a task
+- ~~Refresh & render the Selected Project's tasks inside the `.contents` container everytime we submit a task~~
 - Allow the user to 'cross out' or delete a task
 - Allow the user to navigate between projects
 - Allow the user to create new projects
