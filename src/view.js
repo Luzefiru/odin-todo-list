@@ -9,26 +9,36 @@ const ViewModule = (function () {
       <label class="form--add-task__label" for="dueDate">Due Date</label>
       <input class="form--add-task__input" id="dueDate" type="date" name="Task Due Date" required>
       <div class="form--add-task__buttons">
-        <button class="buttons__add">Add</button><button class="buttons__cancel">Cancel</button>
+        <button class="buttons__add type="submit">Add</button><button class="buttons__cancel" type="button">Cancel</button>
       </div>`;
     // adds the form to the content container before the "Add a Task" button
     const newForm = document.createElement('form');
+    // function to remove the prompt later
+    const removeAddTaskPrompt = function () {
+      document.querySelector('.content').removeChild(newForm);
+    };
     newForm.classList.add('form--add-task');
     newForm.innerHTML = formInnerHTML;
     document.querySelector('.add-task-btn').before(newForm);
     // gives functionality to its "Cancel" button to remove the form and not make changes
     const cancelBtn = document.querySelector('.buttons__cancel');
-    cancelBtn.addEventListener('click', () => { document.querySelector('.content').removeChild(newForm); });
+    cancelBtn.addEventListener('click', () => { removeAddTaskPrompt(); });
     // gives functionality to the "Add" button to append a task to current project's todoList
     const addBtn = document.querySelector('.buttons__add');
-    addBtn.addEventListener('click', () => {
+    addBtn.addEventListener('click', (e) => {
+      // prevent default form submission
+      e.preventDefault();
       // get the form input data values
       const titleInput = document.querySelector('#title').value;
       const descriptionInput = document.querySelector('#description').value;
       const dueDateInput = document.querySelector('#dueDate').value;
       // create a new TodoItem to be appended to the selected project's Todo List
-      const newTodoItem = Todo.createTodoItem(titleInput, descriptionInput, dueDateInput);
-      console.log(newTodoItem);
+      // IF ONLY: title & dueDate are not empty
+      if (titleInput && dueDateInput) {
+        const newTodoItem = Todo.createTodoItem(titleInput, descriptionInput, dueDateInput);
+        console.log(newTodoItem);
+        removeAddTaskPrompt();
+      }
     });
   };
 
