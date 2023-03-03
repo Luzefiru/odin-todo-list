@@ -9,11 +9,14 @@ const ViewModule = (function () {
       <div class="form--add-task__buttons">
         <button class="buttons__add">Add</button><button class="buttons__cancel">Cancel</button>
       </div>`;
-    // adds the form to the content container as the first child
+    // adds the form to the content container before the "Add a Task" button
     const newForm = document.createElement('form');
     newForm.classList.add('form--add-task');
     newForm.innerHTML = formInnerHTML;
     document.querySelector('.add-task-btn').before(newForm);
+    // gives functionality to its "Cancel" button to remove the form and not make changes
+    const cancelBtn = document.querySelector('.buttons__cancel');
+    cancelBtn.addEventListener('click', () => { document.querySelector('.content').removeChild(newForm); });
   };
 
   return { renderAddTaskPrompt };
