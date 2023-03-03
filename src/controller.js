@@ -1,25 +1,25 @@
 const ProjectDataHandler = (function () {
-  const projectList = {};
+  const _projectList = {};
   let selectedProject = null;
   // returns the selected project using closure
   const getSelectedProject = function () {
     return selectedProject;
   };
-  // selects a project via its name in the {projectList} as the {selectedProjectName}
+  // selects a project via its name in the {_projectList} as the {selectedProjectName}
   const selectProject = function (Project) {
-    selectedProject = projectList[Project.getName()];
+    selectedProject = _projectList[Project.getName()];
   };
-  // appends a Project to projectList
+  // appends a Project to _projectList
   const addProject = function (Project) {
-    projectList[Project.getName()] = Project;
+    _projectList[Project.getName()] = Project;
   };
   // deletes a Project using its string name
   const deleteProject = function (Project) {
-    delete projectList[Project.getName()];
+    delete _projectList[Project.getName()];
   };
-  // returns the projectList dictionary containing the name of the projects & their object models
+  // returns the _projectList dictionary containing the name of the projects & their object models
   const getProjectList = function () {
-    return projectList;
+    return _projectList;
   };
   return {
     getSelectedProject,

@@ -2,7 +2,7 @@ import { Todo } from './model';
 import ProjectDataHandler from './controller';
 
 const ViewModule = (function () {
-  const renderAddTaskPrompt = function () {
+  const _renderAddTaskPrompt = function () {
     const formInnerHTML = `<label class="form--add-task__label" for="title">Title</label>
       <input class="form--add-task__input" id="title" type="text" name="Task Title" placeholder="What to do?" required>
       <label class="form--add-task__label" for="desciption">Description (optional)</label>
@@ -46,7 +46,7 @@ const ViewModule = (function () {
   const initializeAddATaskButton = function () {
     const addATaskBtn = document.querySelector('.add-task-btn');
     addATaskBtn.addEventListener('click', () => {
-      renderAddTaskPrompt();
+      _renderAddTaskPrompt();
     });
   };
 
