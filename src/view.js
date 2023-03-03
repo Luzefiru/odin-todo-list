@@ -33,11 +33,12 @@ const ViewModule = (function () {
       const titleInput = document.querySelector('#title').value;
       const descriptionInput = document.querySelector('#description').value;
       const dueDateInput = document.querySelector('#dueDate').value;
-      // create a new TodoItem to be appended to the selected project's Todo List
+      // create a new TodoItem to be appended to the selected project's Todo List then sorts it
       // IF ONLY: title & dueDate are not empty
       if (titleInput && dueDateInput) {
         const newTodoItem = Todo.createTodoItem(titleInput, descriptionInput, dueDateInput);
         ProjectDataHandler.getSelectedProject().addListItem(newTodoItem);
+        ProjectDataHandler.getSelectedProject().sortList();
         console.log('APPENDED LIST', ProjectDataHandler.getSelectedProject().getTodo());
         removeAddTaskPrompt();
       }

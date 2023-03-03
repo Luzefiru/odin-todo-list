@@ -34,10 +34,13 @@ function createProject(name) {
   // sort a list based on the dueDate of the tasks
   const sortList = function () {
     _todoList.sort((a, b) => {
-      if (a.dueDate.getTime() < b.dueDate.getTime()) {
+      let timeA = new Date(a.dueDate);
+      let timeB = new Date(b.dueDate);
+      [timeA, timeB] = [timeA.getTime(), timeB.getTime()];
+      if (timeA < timeB) {
         return -1;
       }
-      if (a.dueDate.getTime() > b.dueDate.getTime()) {
+      if (timeA > timeB) {
         return 1;
       }
 
