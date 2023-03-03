@@ -17,6 +17,7 @@
         "func-names": "off",
         "no-unused-vars": "off",
         "no-plusplus": "off",
-        "wrap-iife": "off"
+        "wrap-iife": "off",
+        "no-underscore-dangle": "off"
     }
 }
