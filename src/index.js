@@ -6,11 +6,9 @@ import ProjectDataHandler from './controller';
 const home = createProject('Home');
 const work = createProject('Work');
 ProjectDataHandler.addProject(home);
-ProjectDataHandler.addProject(work);
 ProjectDataHandler.selectProject(home);
-console.log('selected project', ProjectDataHandler.getSelectedProject());
 
-// initializes the AddATaskButton in that project
+// initializes the functionalities
 ViewModule.initializeAddATaskButton();
 ViewModule.initializeProjectButtons();
 ViewModule.initializeNewProjectButton();

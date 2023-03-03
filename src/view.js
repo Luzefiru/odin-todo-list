@@ -36,7 +36,7 @@ const ViewModule = (function () {
       newCard.innerHTML = taskCardInnerHTML;
       // adds the card to the container before the Add New Task button to be in ascending order
       document.querySelector('.add-task-btn').before(newCard);
-      console.log(ind, currentItemID, taskCardInnerHTML); // debug
+      // console.log(ind, currentItemID, taskCardInnerHTML); // debug
       // gives functionalities to the cards' modal buttons
       const modal = document.querySelector(`[task-id="${currentItemID}"] .task--modal`);
       const modalOpenBtn = document.querySelector(`[task-id="${currentItemID}"] .modal-open`);
@@ -101,7 +101,7 @@ const ViewModule = (function () {
         const newTodoItem = Todo.createTodoItem(titleInput, descriptionInput, dueDateInput);
         ProjectDataHandler.getSelectedProject().addListItem(newTodoItem);
         ProjectDataHandler.getSelectedProject().sortList();
-        console.log('APPENDED LIST', ProjectDataHandler.getSelectedProject().getTodo());
+        // console.log('APPENDED LIST', ProjectDataHandler.getSelectedProject().getTodo()); // debug
         removeAddTaskPrompt();
         renderProjectTasks();
       }
@@ -117,7 +117,7 @@ const ViewModule = (function () {
     const projectCategoryButtons = document.querySelectorAll('.aside__category__project');
     projectCategoryButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
-        console.log('clicked!', ProjectDataHandler.getProjectList()[btn.textContent].getTodo());
+        // console.log('clicked!', ProjectDataHandler.getProjectList()[btn.textContent].getTodo());
         ProjectDataHandler.selectProject(ProjectDataHandler.getProjectList()[btn.textContent]);
         renderProjectTasks();
         projectCategoryButtons.forEach((b) => {
@@ -157,11 +157,9 @@ const ViewModule = (function () {
       formConfirmBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const nameField = document.querySelector('.form__name-field');
-        console.log(nameField.value); // works
         // creates & adds a project to the project object, then selects it
         ProjectDataHandler.addProject(createProject(nameField.value));
         ProjectDataHandler.selectProject(ProjectDataHandler.getProjectList()[nameField.value]);
-        console.log('selected project:', ProjectDataHandler.getSelectedProject());
         newProjectForm.remove();
         // creates a new project category in the side bar
         const newCategory = document.createElement('button');
