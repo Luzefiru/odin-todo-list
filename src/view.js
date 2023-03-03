@@ -10,7 +10,7 @@ const ProjectPrompt = (function () {
   };
   const removePromptNewProject = function () {
     const sidebar = document.querySelector('aside');
-    sidebar.innerHTML = sidebar.innerHTML.replace(newProjectFormHTML, '');
+    sidebar.removeChild(document.querySelector('form'));
   };
   return { addPromptNewProject, removePromptNewProject };
 })();

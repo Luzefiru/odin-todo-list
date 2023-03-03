@@ -51,4 +51,4 @@ function createProject(name) {
   };
 }
 
-export { Todo, createProject };
+export { Todo, createProject, projectList };
