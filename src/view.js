@@ -161,6 +161,26 @@ const ViewModule = (function () {
         // creates & adds a project to the project object, then selects it
         ProjectDataHandler.addProject(createProject(nameField.value));
         ProjectDataHandler.selectProject(ProjectDataHandler.getProjectList()[nameField.value]);
+        console.log('selected project:', ProjectDataHandler.getSelectedProject());
+        newProjectForm.remove();
+        // creates a new project category in the side bar
+        const newCategory = document.createElement('button');
+        const newCategoryInnerHTML = `<img src="../res/projects-icon.svg">${ProjectDataHandler.getSelectedProject().getName()}`;
+        newCategory.classList.add('aside__category__project');
+        newCategory.innerHTML = newCategoryInnerHTML;
+        // prepend it before the horizontal divider
+        hr.before(newCategory);
+        // initialize the buttons
+        const projectCategoryButtons = document.querySelectorAll('.aside__category__project');
+        projectCategoryButtons.forEach((b) => {
+          if (b.classList.contains('project--selected')) {
+            b.classList.remove('project--selected');
+          }
+        });
+        initializeProjectButtons();
+        // select it visually by default
+        newCategory.classList.add('project--selected');
+        // render the project tasks
         renderProjectTasks();
       });
     });
