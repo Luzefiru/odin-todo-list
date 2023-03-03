@@ -79,15 +79,18 @@ const ViewModule = (function () {
       // get the form input data values
       const titleInput = document.querySelector('#title').value;
       const descriptionInput = document.querySelector('#description').value;
-      const dueDateInput = document.querySelector('#dueDate').value;
+      let dueDateInput = new Date(document.querySelector('#dueDate').value);
+      // convert date to standardized format
+      dueDateInput = dueDateInput.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' });
       // create a new TodoItem to be appended to the selected project's Todo List then sorts it
       // IF ONLY: title & dueDate are not empty
-      if (titleInput && dueDateInput) {
+      if (titleInput && dueDateInput !== 'Invalid Date') {
         const newTodoItem = Todo.createTodoItem(titleInput, descriptionInput, dueDateInput);
         ProjectDataHandler.getSelectedProject().addListItem(newTodoItem);
         ProjectDataHandler.getSelectedProject().sortList();
         console.log('APPENDED LIST', ProjectDataHandler.getSelectedProject().getTodo());
         removeAddTaskPrompt();
+        renderProjectTasks();
       }
     });
   };
