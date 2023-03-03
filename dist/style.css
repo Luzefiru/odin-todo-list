@@ -184,6 +184,11 @@ aside {
 
 /* form styles */
 
+label,
+input {
+  color: var(--text);
+}
+
 .form--add-task {
   background-color: var(--surface);
   display: flex;
