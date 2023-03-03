@@ -148,3 +148,29 @@ aside {
   cursor: default;
   font-weight: 700;
 }
+
+/* content styles */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 5rem;
+}
+
+/* task view */
+
+.add-task-btn {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.15rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.add-task-btn > img {
+  width: 2rem;
+  height: 2rem;
+}
