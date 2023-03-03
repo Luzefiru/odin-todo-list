@@ -4,7 +4,7 @@ import ProjectDataHandler from './controller';
 const ViewModule = (function () {
   const _removeProjectTasks = function () {
     const contentDiv = document.querySelector('.content');
-    contentDiv.innerHTML = '<button class="add-task-btn"><img src="../res/plus-circle-outline.svg"> Add a Task</button>';
+    contentDiv.innerHTML = '<button class="add-task-btn"><img src="./res/plus-circle-outline.svg"> Add a Task</button>';
     initializeAddATaskButton();
   };
   const renderProjectTasks = function () {
@@ -163,7 +163,7 @@ const ViewModule = (function () {
         newProjectForm.remove();
         // creates a new project category in the side bar
         const newCategory = document.createElement('button');
-        const newCategoryInnerHTML = `<img src="../res/projects-icon.svg">${ProjectDataHandler.getSelectedProject().getName()}`;
+        const newCategoryInnerHTML = `<img src="./res/projects-icon.svg">${ProjectDataHandler.getSelectedProject().getName()}`;
         newCategory.classList.add('aside__category__project');
         newCategory.innerHTML = newCategoryInnerHTML;
         // prepend it before the horizontal divider
