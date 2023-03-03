@@ -75,9 +75,9 @@ header {
   display: flex;
   align-items: center;
   padding: 0 1rem;
-  gap: 12px;
-  font-size: 1.25rem;
-  font-weight: 600;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.75rem;
 }
 
 .header__logo {
