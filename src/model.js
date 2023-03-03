@@ -1,5 +1,3 @@
-const projectList = [];
-
 const Todo = (function () {
   // a unique identifier is generated every time a todo item is made
   let id = 0;
@@ -20,6 +18,10 @@ function createProject(name) {
   // returns the todo list array
   const getTodo = function () {
     return todoList;
+  };
+  // returns the project's name
+  const getName = function () {
+    return name;
   };
   // adds a list item to the todoList
   const addListItem = function (listItem) {
@@ -43,11 +45,13 @@ function createProject(name) {
     });
   };
   return {
+    todoList,
     getTodo,
+    getName,
     addListItem,
     removeListItem,
     sortList,
   };
 }
 
-export { Todo, createProject, projectList };
+export { Todo, createProject };

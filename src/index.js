@@ -1,5 +1,6 @@
 import { Todo, createProject } from './model';
 import ViewModule from './view';
+import ProjectDataHandler from './controller';
 
 // const addTaskBtn = document.querySelector('.add-task-btn');
 // addTaskBtn.addEventListener('click', () => {
@@ -14,3 +15,6 @@ const home = createProject('Home');
 home.addListItem(eatFood);
 home.addListItem(sleep);
 console.log(home.getTodo());
+
+ProjectDataHandler.addProject(home);
+console.log('Project list:', ProjectDataHandler.getProjectList());
