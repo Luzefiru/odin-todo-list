@@ -160,6 +160,10 @@ aside {
   padding-left: 0.5rem;
 }
 
+.new-projects--btn {
+  all: unset;
+}
+
 .form__btn.new-proj {
   all: unset;
   align-self: center;
