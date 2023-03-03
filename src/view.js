@@ -2,6 +2,10 @@ import { Todo } from './model';
 import ProjectDataHandler from './controller';
 
 const ViewModule = (function () {
+  const renderProjectTasks = function () {
+    const contentContainer = document.querySelector('.content');
+    const selectedProjectTodoList = ProjectDataHandler.getSelectedProject().getTodo();
+  };
   const _renderAddTaskPrompt = function () {
     // disallows multiple form prompts to be rendered on the same window
     if (document.querySelector('form') !== null) {
@@ -55,8 +59,9 @@ const ViewModule = (function () {
       _renderAddTaskPrompt();
     });
   };
+  
 
-  return { initializeAddATaskButton };
+  return { initializeAddATaskButton, renderProjectTasks };
 })();
 
 export default ViewModule;
