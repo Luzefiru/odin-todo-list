@@ -3,6 +3,11 @@ import ProjectDataHandler from './controller';
 
 const ViewModule = (function () {
   const _renderAddTaskPrompt = function () {
+    // disallows multiple form prompts to be rendered on the same window
+    if (document.querySelector('form') !== null) {
+      console.log('ERROR: Add a Task Form already present!');
+      return;
+    }
     const formInnerHTML = `<label class="form--add-task__label" for="title">Title</label>
       <input class="form--add-task__input" id="title" type="text" name="Task Title" placeholder="What to do?" required>
       <label class="form--add-task__label" for="desciption">Description (optional)</label>
