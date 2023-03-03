@@ -183,12 +183,19 @@ aside {
   -webkit-mask: url(../res/check-bold.svg) no-repeat center;
   mask: url(../res/check-bold.svg) no-repeat center;
   background-color: var(--positive);
+  transition: 0.05s ease-in;
 }
 
 .form__cancel {
   -webkit-mask: url(../res/close-thick.svg) no-repeat center;
   mask: url(../res/close-thick.svg) no-repeat center;
   background-color: var(--error);
+}
+
+.form__confirm:hover,
+.form__cancel:hover {
+  transform: scale(1.3);
+  transition: 0.05s ease-out;
 }
 
 /* content styles */
