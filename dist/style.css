@@ -41,7 +41,7 @@ body {
 main {
   height: calc(100% - 64px - 24px); /* -header -footer */
   display: grid;
-  grid-template-columns: 1.05fr 4fr;
+  grid-template-columns: 1.2fr 5fr;
   background-color: var(--surface-variant);
 }
 
@@ -139,43 +139,4 @@ aside {
 .aside__category__project:hover {
   background-color: var(--surface-variant);
   border-radius: 8px;
-}
-
-/* style for selected projects */
-.aside__category__project.project--selected {
-  background-color: var(--selected);
-  border-radius: 8px;
-  cursor: default;
-  font-weight: 700;
-}
-
-/* new project form */
-
-.form__text.new-proj {
-  all: unset;
-  outline: var(--unselected) 1.5px solid;
-  border-radius: 12px;
-  flex: 1;
-  padding-right: calc(2rem + 0.5rem);
-  padding-left: 0.5rem;
-}
-
-.new-projects--btn {
-  all: unset;
-}
-
-.form__btn.new-proj {
-  all: unset;
-  align-self: center;
-  width: 2rem;
-  position: absolute;
-  right: 0.5rem;
-  cursor: pointer;
-}
-
-form.new-proj {
-  display: flex;
-  gap: 4px;
-  height: 2.5rem;
-  position: relative;
 }
