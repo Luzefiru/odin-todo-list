@@ -335,9 +335,20 @@ label[for="dueDate"]::after {
 /* task modal styles */
 
 .task--modal {
+  border: none;
+  padding: 1.25rem;
+  border-radius: 12px;
   max-width: 50ch;
   margin: auto;
-  
+  display: grid;
+  grid-template-areas:
+  "content exit"
+  "content exit"
+  "content exit";
+  grid-template-columns: auto 2.25rem;
+  align-items: baseline;
+  row-gap: 1.5rem;
+  box-shadow: 0 0 64px rgba(0, 0, 0, .10);
 }
 
 .task--modal::backdrop {
@@ -346,9 +357,33 @@ label[for="dueDate"]::after {
 }
 
 .task--modal__exit-btn {
+  grid-area: exit;
   width: 1.75rem;
   height: 1.75rem;
   mask: url(../res/close-thick.svg) no-repeat center;
   -webkit-mask: url(../res/close-thick.svg) no-repeat center;
   background-color: var(--text);
+}
+
+.task--modal__title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.task--modal__description {
+  font-size: 0.9rem;
+  color: var(--text-variant);
+}
+
+.task--modal__due-date {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.task--modal__due-date::before {
+  content: 'Deadline:';
+  font-weight: 600;
+  color: var(--error);
 }
