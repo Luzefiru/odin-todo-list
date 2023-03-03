@@ -1,4 +1,5 @@
 import { Todo } from './model';
+import ProjectDataHandler from './controller';
 
 const ViewModule = (function () {
   const renderAddTaskPrompt = function () {
@@ -36,7 +37,8 @@ const ViewModule = (function () {
       // IF ONLY: title & dueDate are not empty
       if (titleInput && dueDateInput) {
         const newTodoItem = Todo.createTodoItem(titleInput, descriptionInput, dueDateInput);
-        console.log(newTodoItem);
+        ProjectDataHandler.getSelectedProject().addListItem(newTodoItem);
+        console.log('APPENDED LIST', ProjectDataHandler.getSelectedProject().getTodo());
         removeAddTaskPrompt();
       }
     });

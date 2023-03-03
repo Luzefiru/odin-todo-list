@@ -18,3 +18,6 @@ console.log(home.getTodo());
 
 ProjectDataHandler.addProject(home);
 console.log('Project list:', ProjectDataHandler.getProjectList());
+console.log('Project name', home.getName());
+ProjectDataHandler.selectProject(home);
+console.log('Selected Project:', ProjectDataHandler.getSelectedProject());

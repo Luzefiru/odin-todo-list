@@ -45,7 +45,6 @@ function createProject(name) {
     });
   };
   return {
-    todoList,
     getTodo,
     getName,
     addListItem,
