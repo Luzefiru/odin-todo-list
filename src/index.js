@@ -9,5 +9,3 @@ ProjectDataHandler.selectProject(home);
 
 // initializes the AddATaskButton in that project
 ViewModule.initializeAddATaskButton();
-
-ViewModule.renderProjectTasks();

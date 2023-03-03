@@ -2,11 +2,17 @@ import { Todo } from './model';
 import ProjectDataHandler from './controller';
 
 const ViewModule = (function () {
-  const renderProjectTasks = function () {
+  const _removeProjectTasks = function () {
+    const contentDiv = document.querySelector('.content');
+    contentDiv.innerHTML = '<button class="add-task-btn"><img src="../res/plus-circle-outline.svg"> Add a Task</button>';
+    initializeAddATaskButton();
+  };
+  const _renderProjectTasks = function () {
+    // remove all currently displayed cards before rendering them
+    _removeProjectTasks();
     const selectedProjectTodoList = ProjectDataHandler.getSelectedProject().getTodo();
     for (let ind = 0; ind < selectedProjectTodoList.length; ind++) {
       const { title, description, dueDate } = selectedProjectTodoList[ind];
-      console.log(title, description, dueDate);
       const taskCardInnerHTML = `<div class="task__title">${title}</div>
         <button class="task__details-btn modal-open">DETAILS</button>
         <div class="task__due-date">${dueDate}</div>
@@ -81,7 +87,7 @@ const ViewModule = (function () {
       const descriptionInput = document.querySelector('#description').value;
       let dueDateInput = new Date(document.querySelector('#dueDate').value);
       // convert date to standardized format
-      dueDateInput = dueDateInput.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' });
+      dueDateInput = dueDateInput.toLocaleDateString(undefined, { year: 'numeric', month: '2-digit', day: '2-digit' });
       // create a new TodoItem to be appended to the selected project's Todo List then sorts it
       // IF ONLY: title & dueDate are not empty
       if (titleInput && dueDateInput !== 'Invalid Date') {
@@ -90,7 +96,7 @@ const ViewModule = (function () {
         ProjectDataHandler.getSelectedProject().sortList();
         console.log('APPENDED LIST', ProjectDataHandler.getSelectedProject().getTodo());
         removeAddTaskPrompt();
-        renderProjectTasks();
+        _renderProjectTasks();
       }
     });
   };
@@ -100,7 +106,7 @@ const ViewModule = (function () {
       _renderAddTaskPrompt();
     });
   };
-  return { renderProjectTasks, initializeAddATaskButton };
+  return { initializeAddATaskButton };
 })();
 
 export default ViewModule;
