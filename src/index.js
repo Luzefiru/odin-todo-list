@@ -13,3 +13,4 @@ console.log('selected project', ProjectDataHandler.getSelectedProject());
 // initializes the AddATaskButton in that project
 ViewModule.initializeAddATaskButton();
 ViewModule.initializeProjectButtons();
+ViewModule.initializeNewProjectButton();

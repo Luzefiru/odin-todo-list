@@ -129,7 +129,38 @@ const ViewModule = (function () {
       });
     });
   };
-  return { initializeAddATaskButton, renderProjectTasks, initializeProjectButtons };
+  const initializeNewProjectButton = function () {
+    const newProjectBtn = document.querySelector('.aside__category__project--new');
+    // add the form when the button is pressed
+    newProjectBtn.addEventListener('click', () => {
+      // prevents adding more instances if it already exists
+      if (document.querySelector('.form-project--new') !== null) {
+        console.log('ERROR: The New Project form is already being displayed!');
+        return;
+      }
+      const formInnerHTML = `<input class="form__name-field" type="text" name="project-name" id="project-name" placeholder="Project Name" required>
+      <button type="button" class="form__cancel"></button>
+      <button type="submit" class="form__confirm"></button>`;
+      const newProjectForm = document.createElement('form');
+      newProjectForm.classList.add('form-project--new');
+      newProjectForm.innerHTML = formInnerHTML;
+      const hr = document.querySelector('hr');
+      hr.after(newProjectForm);
+      // gives functionalities to its buttons
+      const formCancelBtn = document.querySelector('button.form__cancel');
+      const formConfirmBtn = document.querySelector('button.form__confirm');
+      formCancelBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        newProjectForm.remove();
+      });
+    });
+  };
+  return {
+    initializeAddATaskButton,
+    renderProjectTasks,
+    initializeProjectButtons,
+    initializeNewProjectButton,
+  };
 })();
 
 export default ViewModule;
