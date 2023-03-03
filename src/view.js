@@ -29,17 +29,18 @@ const ViewModule = (function () {
             ${dueDate}
           </div>
         </dialog>`;
+      const currentItemID = selectedProjectTodoList[ind].id;
       const newCard = document.createElement('div');
       newCard.classList.add('card--task');
-      newCard.setAttribute('index', ind);
+      newCard.setAttribute('task-id', currentItemID);
       newCard.innerHTML = taskCardInnerHTML;
       // adds the card to the container before the Add New Task button to be in ascending order
       document.querySelector('.add-task-btn').before(newCard);
-      console.log(ind, selectedProjectTodoList[ind], taskCardInnerHTML); // debug
+      console.log(ind, currentItemID, taskCardInnerHTML); // debug
       // gives functionalities to the cards' modal buttons
-      const modal = document.querySelector(`[index="${ind}"] .task--modal`);
-      const modalOpenBtn = document.querySelector(`[index="${ind}"] .modal-open`);
-      const modalCloseBtn = document.querySelector(`[index="${ind}"] .modal-close`);
+      const modal = document.querySelector(`[task-id="${currentItemID}"] .task--modal`);
+      const modalOpenBtn = document.querySelector(`[task-id="${currentItemID}"] .modal-open`);
+      const modalCloseBtn = document.querySelector(`[task-id="${currentItemID}"] .modal-close`);
       modalOpenBtn.addEventListener('click', () => {
         modal.showModal();
         modal.classList.toggle('hidden');
@@ -47,6 +48,12 @@ const ViewModule = (function () {
       modalCloseBtn.addEventListener('click', () => {
         modal.close();
         modal.classList.toggle('hidden');
+      });
+      // gives functionality to the delete task button
+      const deleteTaskBtn = document.querySelector(`[task-id="${currentItemID}"] .task__delete-btn`);
+      deleteTaskBtn.addEventListener('click', () => {
+        ProjectDataHandler.getSelectedProject().removeListItem(currentItemID);
+        _renderProjectTasks();
       });
     }
   };
