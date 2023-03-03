@@ -334,6 +334,10 @@ label[for="dueDate"]::after {
 
 /* task modal styles */
 
+.task--modal.hidden {
+  display: none;
+}
+
 .task--modal {
   border: none;
   padding: 1.25rem;
@@ -357,6 +361,7 @@ label[for="dueDate"]::after {
 }
 
 .task--modal__exit-btn {
+  cursor: pointer;
   grid-area: exit;
   width: 1.75rem;
   height: 1.75rem;

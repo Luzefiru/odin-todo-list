@@ -13,6 +13,12 @@ ViewModule.initializeAddATaskButton();
 
 const modal = document.querySelector('.task--modal');
 const modalOpenBtn = document.querySelector('.modal-open');
+const modalCloseBtn = document.querySelector('.modal-close');
 modalOpenBtn.addEventListener('click', () => {
   modal.showModal();
+  modal.classList.toggle('hidden');
+});
+modalCloseBtn.addEventListener('click', () => {
+  modal.close();
+  modal.classList.toggle('hidden');
 });
