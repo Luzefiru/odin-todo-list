@@ -41,7 +41,7 @@ body {
 main {
   height: calc(100% - 64px - 24px); /* -header -footer */
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1.05fr 4fr;
   background-color: var(--surface-variant);
 }
 
@@ -158,6 +158,10 @@ aside {
   flex: 1;
   padding-right: calc(2rem + 0.5rem);
   padding-left: 0.5rem;
+}
+
+.new-projects--btn {
+  all: unset;
 }
 
 .form__btn.new-proj {
