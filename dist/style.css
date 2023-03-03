@@ -278,9 +278,15 @@ label[for="dueDate"]::after {
   display: flex;
   align-items: center;
   padding: 0.5rem 1.35rem;
-  height: 2.9rem;
+  height: 3.05rem;
   box-shadow: 0 2px 4px rgb(94, 95, 98, 0.25);
   gap: 1rem;
+  transition: all 0.05s ease-in;
+}
+
+.card--task:hover {
+  transform: scale(1.015);
+  transition: all 0.05s ease-out;
 }
 
 .task__delete-btn {
