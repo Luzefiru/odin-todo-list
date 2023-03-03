@@ -154,6 +154,43 @@ aside {
   margin-top: 0.5rem;
 }
 
+/* style for new project form */
+
+.form-project--new {
+  margin-top: 1rem;
+  display: flex;
+  height: 2rem;
+}
+
+.form__name-field {
+  align-self: stretch;
+  padding: 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-right: 0.35rem;
+  width: 100%;
+}
+
+.form__confirm,
+.form__cancel {
+  align-self: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.form__confirm {
+  -webkit-mask: url(../res/check-bold.svg) no-repeat center;
+  mask: url(../res/check-bold.svg) no-repeat center;
+  background-color: var(--positive);
+}
+
+.form__cancel {
+  -webkit-mask: url(../res/close-thick.svg) no-repeat center;
+  mask: url(../res/close-thick.svg) no-repeat center;
+  background-color: var(--error);
+}
+
 /* content styles */
 
 .content {
