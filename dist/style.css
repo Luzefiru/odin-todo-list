@@ -19,7 +19,7 @@ body {
 
 :root {
   --surface: #fefeff;
-  --surface-variant: #f6f7ff;
+  --surface-variant: #e5e6ed;
   --primary: #3226ba;
   --primary-variant: #342e8f;
   --secondary: #f0be4a;
@@ -168,6 +168,12 @@ aside {
   font-size: 1.15rem;
   color: var(--text);
   font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+}
+
+.add-task-btn:hover {
+  background-color: var(--surface);
 }
 
 .add-task-btn > img {
