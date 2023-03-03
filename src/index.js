@@ -19,5 +19,11 @@ projectCategoryButtons.forEach((btn) => {
     console.log('clicked!', ProjectDataHandler.getProjectList()[btn.textContent].getTodo());
     ProjectDataHandler.selectProject(ProjectDataHandler.getProjectList()[btn.textContent]);
     ViewModule.renderProjectTasks();
+    projectCategoryButtons.forEach((b) => {
+      if (b.classList.contains('project--selected')) {
+        b.classList.remove('project--selected');
+      }
+    });
+    btn.classList.add('project--selected');
   });
 });
