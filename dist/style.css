@@ -25,7 +25,7 @@ body {
   --secondary: #f0be4a;
   --tertiary: #e19ee1;
   --error: #dc3a4e;
-  --positive: #519e5e; 
+  --positive: #48b75b; 
   --text: #151d22;
   --text-variant: #7b7e80;
   --unselected: #808b97;
@@ -209,4 +209,46 @@ aside {
   height: 5rem;
   display: flex;
   align-items: flex-start;
+}
+
+.form--add-task__buttons {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.form--add-task__buttons > button {
+  padding: 0.5rem 3.25rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons__add {
+  cursor: pointer;
+  background-color: var(--positive);
+  color: var(--surface);
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.05rem;
+}
+
+.buttons__add:hover {
+  background-color: #348642;
+}
+
+.buttons__cancel {
+  cursor: pointer;
+  background-color: var(--error);
+  color: var(--surface);
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.05rem;
+}
+
+.buttons__cancel:hover {
+  background-color: #912431;
 }
