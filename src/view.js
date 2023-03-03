@@ -1,3 +1,5 @@
+import { Todo } from './model';
+
 const ViewModule = (function () {
   const renderAddTaskPrompt = function () {
     const formInnerHTML = `<label class="form--add-task__label" for="title">Title</label>
@@ -17,6 +19,17 @@ const ViewModule = (function () {
     // gives functionality to its "Cancel" button to remove the form and not make changes
     const cancelBtn = document.querySelector('.buttons__cancel');
     cancelBtn.addEventListener('click', () => { document.querySelector('.content').removeChild(newForm); });
+    // gives functionality to the "Add" button to append a task to current project's todoList
+    const addBtn = document.querySelector('.buttons__add');
+    addBtn.addEventListener('click', () => {
+      // get the form input data values
+      const titleInput = document.querySelector('#title').value;
+      const descriptionInput = document.querySelector('#description').value;
+      const dueDateInput = document.querySelector('#dueDate').value;
+      // create a new TodoItem to be appended to the selected project's Todo List
+      const newTodoItem = Todo.createTodoItem(titleInput, descriptionInput, dueDateInput);
+      console.log(newTodoItem);
+    });
   };
 
   return { renderAddTaskPrompt };
