@@ -6,7 +6,7 @@ A to-do list web application built with modular JavaScript code to practice Obje
 - Refresh & render the Selected Project's tasks inside the `.contents` container everytime the user submits a task
 - Allow the user to 'cross out' or delete a task
 - Allow the user to navigate between projects
+- Allow the user to create new projects
 
 ## TODO
-- Allow the user to create new projects
 - Save the data locally using [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
