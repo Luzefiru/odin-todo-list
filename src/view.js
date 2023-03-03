@@ -43,8 +43,14 @@ const ViewModule = (function () {
       }
     });
   };
+  const initializeAddATaskButton = function () {
+    const addATaskBtn = document.querySelector('.add-task-btn');
+    addATaskBtn.addEventListener('click', () => {
+      renderAddTaskPrompt();
+    });
+  };
 
-  return { renderAddTaskPrompt };
+  return { initializeAddATaskButton };
 })();
 
 export default ViewModule;
