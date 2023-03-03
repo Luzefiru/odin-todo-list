@@ -114,10 +114,6 @@ aside {
   margin-right: 2rem;
 }
 
-.aside__category--projects__btn {
-  cursor: pointer;
-}
-
 .aside__category__project {
   all: unset;
   display: flex;
@@ -147,6 +143,12 @@ aside {
   border-radius: 8px;
   cursor: default;
   font-weight: 700;
+}
+
+/* style for new project button */
+
+.project--new {
+  margin-top: 0.5rem;
 }
 
 /* content styles */
