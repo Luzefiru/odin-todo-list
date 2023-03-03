@@ -1,4 +1,4 @@
-import { Todo } from './model';
+import { createProject, Todo } from './model';
 import ProjectDataHandler from './controller';
 
 const ViewModule = (function () {
@@ -146,12 +146,22 @@ const ViewModule = (function () {
       newProjectForm.innerHTML = formInnerHTML;
       const hr = document.querySelector('hr');
       hr.after(newProjectForm);
-      // gives functionalities to its buttons
+      // give functionality to the cancel button
       const formCancelBtn = document.querySelector('button.form__cancel');
-      const formConfirmBtn = document.querySelector('button.form__confirm');
       formCancelBtn.addEventListener('click', (e) => {
         e.preventDefault();
         newProjectForm.remove();
+      });
+      // give functionality to the add project button
+      const formConfirmBtn = document.querySelector('button.form__confirm');
+      formConfirmBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const nameField = document.querySelector('.form__name-field');
+        console.log(nameField.value); // works
+        // creates & adds a project to the project object, then selects it
+        ProjectDataHandler.addProject(createProject(nameField.value));
+        ProjectDataHandler.selectProject(ProjectDataHandler.getProjectList()[nameField.value]);
+        renderProjectTasks();
       });
     });
   };
