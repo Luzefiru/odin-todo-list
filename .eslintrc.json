@@ -12,12 +12,13 @@
     },
     "ignorePatterns": ["webpack.config.js"],
     "rules": {
-        "no-console": "off", // ignores console.log formatting
+        "no-console": "off",
         "linebreak-style": "off", // ignores LF vs CRLF errors
         "func-names": "off",
         "no-unused-vars": "off",
         "no-plusplus": "off",
         "wrap-iife": "off",
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "no-use-before-define": "off"
     }
 }
