@@ -1,3 +1,5 @@
+const projectList = [];
+
 const Todo = (function () {
   // a unique identifier is generated every time a todo item is made
   let id = 0;
