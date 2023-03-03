@@ -9,4 +9,5 @@ A to-do list web application built with modular JavaScript code to practice Obje
 - Allow the user to create new projects
 
 ## TODO
+- Fix Bug: empty string New Project name creating empty project categories
 - Save the data locally using [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
