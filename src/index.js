@@ -7,17 +7,11 @@ import ProjectDataHandler from './controller';
 
 // })
 
-ViewModule.initializeAddATaskButton();
-
-const eatFood = Todo.createTodoItem('Eat Food', 'eat food in the diner', 5, 'please do it');
-const sleep = Todo.createTodoItem('Sleep', 'sleepy time', 1, 'weeee');
+// initiatlizes the default project & selects it for appending tasks with the Add A Task Form
 const home = createProject('Home');
-home.addListItem(eatFood);
-home.addListItem(sleep);
-console.log(home.getTodo());
-
 ProjectDataHandler.addProject(home);
-console.log('Project list:', ProjectDataHandler.getProjectList());
-console.log('Project name', home.getName());
 ProjectDataHandler.selectProject(home);
 console.log('Selected Project:', ProjectDataHandler.getSelectedProject());
+
+// initializes the AddATaskButton in that project
+ViewModule.initializeAddATaskButton();

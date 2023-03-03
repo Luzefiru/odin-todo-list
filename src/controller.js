@@ -1,5 +1,6 @@
 const ProjectDataHandler = (function () {
   const _projectList = {};
+  // Selected Project is where the ViewModule appends all the todo list items to
   let selectedProject = null;
   // returns the selected project using closure
   const getSelectedProject = function () {
