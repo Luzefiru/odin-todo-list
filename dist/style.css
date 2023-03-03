@@ -267,3 +267,66 @@ label[for="dueDate"]::after {
 .buttons__cancel:hover {
   background-color: #912431;
 }
+
+/* task card styles */
+
+.card--task {
+  background-color: var(--surface);
+  border-radius: 12px;
+  border-left: var(--primary-variant) 10px solid;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1.35rem;
+  height: 2.9rem;
+  box-shadow: 0 2px 4px rgb(94, 95, 98, 0.25);
+  gap: 1rem;
+}
+
+.task__delete-btn {
+  justify-self: flex-end;
+  all: unset;
+  cursor: pointer;
+  width: 1.75rem;
+  height: 1.75rem;
+  /* background-image: url(../res/trash-can.svg);
+  background-size: cover;
+  background-position: center; */
+
+  /* better style to use CSS to customize svg icon color using background-color */
+  -webkit-mask: url(../res/trash-can.svg) no-repeat center;
+  mask: url(../res/trash-can.svg) no-repeat center;
+  background-color: var(--primary-variant);
+}
+
+.task__delete-btn:hover {
+  background-color: var(--error);
+}
+
+.task__title {
+  margin-right: auto; /* pushes everything else to the right */
+  color: var(--text);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.task__details-btn {
+  all: unset;
+  cursor: pointer;
+  color: var(--primary-variant);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+  border-radius: 4px;
+  border: 1.75px solid var(--primary-variant);
+}
+
+.task__due-date {
+  font-weight: 500;
+  color: var(--text-variant);
+  font-size: 0.85rem;
+}
+
+.task__details-btn:hover {
+  color: var(--surface);
+  background-color: var(--primary-variant);
+}
