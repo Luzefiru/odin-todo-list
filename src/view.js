@@ -113,7 +113,23 @@ const ViewModule = (function () {
       _renderAddTaskPrompt();
     });
   };
-  return { initializeAddATaskButton, renderProjectTasks };
+  const initializeProjectButtons = function () {
+    const projectCategoryButtons = document.querySelectorAll('.aside__category__project');
+    projectCategoryButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        console.log('clicked!', ProjectDataHandler.getProjectList()[btn.textContent].getTodo());
+        ProjectDataHandler.selectProject(ProjectDataHandler.getProjectList()[btn.textContent]);
+        renderProjectTasks();
+        projectCategoryButtons.forEach((b) => {
+          if (b.classList.contains('project--selected')) {
+            b.classList.remove('project--selected');
+          }
+        });
+        btn.classList.add('project--selected');
+      });
+    });
+  };
+  return { initializeAddATaskButton, renderProjectTasks, initializeProjectButtons };
 })();
 
 export default ViewModule;
