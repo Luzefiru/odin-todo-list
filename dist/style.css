@@ -41,7 +41,7 @@ body {
 main {
   height: calc(100% - 64px - 24px); /* -header -footer */
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1.05fr 4fr;
   background-color: var(--surface-variant);
 }
 
