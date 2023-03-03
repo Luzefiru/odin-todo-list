@@ -7,7 +7,7 @@ const ViewModule = (function () {
     contentDiv.innerHTML = '<button class="add-task-btn"><img src="../res/plus-circle-outline.svg"> Add a Task</button>';
     initializeAddATaskButton();
   };
-  const _renderProjectTasks = function () {
+  const renderProjectTasks = function () {
     // remove all currently displayed cards before rendering them
     _removeProjectTasks();
     const selectedProjectTodoList = ProjectDataHandler.getSelectedProject().getTodo();
@@ -53,7 +53,7 @@ const ViewModule = (function () {
       const deleteTaskBtn = document.querySelector(`[task-id="${currentItemID}"] .task__delete-btn`);
       deleteTaskBtn.addEventListener('click', () => {
         ProjectDataHandler.getSelectedProject().removeListItem(currentItemID);
-        _renderProjectTasks();
+        renderProjectTasks();
       });
     }
   };
@@ -103,7 +103,7 @@ const ViewModule = (function () {
         ProjectDataHandler.getSelectedProject().sortList();
         console.log('APPENDED LIST', ProjectDataHandler.getSelectedProject().getTodo());
         removeAddTaskPrompt();
-        _renderProjectTasks();
+        renderProjectTasks();
       }
     });
   };
@@ -113,7 +113,7 @@ const ViewModule = (function () {
       _renderAddTaskPrompt();
     });
   };
-  return { initializeAddATaskButton };
+  return { initializeAddATaskButton, renderProjectTasks };
 })();
 
 export default ViewModule;
