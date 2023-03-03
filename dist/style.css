@@ -89,6 +89,14 @@ header {
   height: 3rem;
 }
 
+/* content styles */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 5rem;
+}
+
 /* sidebar */
 
 aside {
@@ -198,12 +206,8 @@ aside {
   transition: 0.05s ease-out;
 }
 
-/* content styles */
-
-.content {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 5rem;
+hr {
+  border: var(--unselected) 1px solid;
 }
 
 /* task view */
