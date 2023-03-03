@@ -3,16 +3,14 @@ import ProjectDataHandler from './controller';
 
 const ViewModule = (function () {
   const renderProjectTasks = function () {
-    const contentContainer = document.querySelector('.content');
     const selectedProjectTodoList = ProjectDataHandler.getSelectedProject().getTodo();
     for (let ind = 0; ind < selectedProjectTodoList.length; ind++) {
-      const { title, description, dueDate } = selectedProjectTodoList;
-      const taskCardInnerHTML = `<div class="card--task" index="${ind}">
-        <div class="task__title">${title}</div>
+      const { title, description, dueDate } = selectedProjectTodoList[ind];
+      console.log(title, description, dueDate);
+      const taskCardInnerHTML = `<div class="task__title">${title}</div>
         <button class="task__details-btn modal-open">DETAILS</button>
         <div class="task__due-date">${dueDate}</div>
         <button class="task__delete-btn"></button>
-      
         <dialog class="task--modal hidden">
           <button class="task--modal__exit-btn modal-close"></button>
           <div class="task--modal__title">
@@ -24,9 +22,26 @@ const ViewModule = (function () {
           <div class="task--modal__due-date">
             ${dueDate}
           </div>
-        </dialog>
-        </div>`;
-      console.log(ind, selectedProjectTodoList[ind], taskCardInnerHTML);
+        </dialog>`;
+      const newCard = document.createElement('div');
+      newCard.classList.add('card--task');
+      newCard.setAttribute('index', ind);
+      newCard.innerHTML = taskCardInnerHTML;
+      // adds the card to the container before the Add New Task button to be in ascending order
+      document.querySelector('.add-task-btn').before(newCard);
+      console.log(ind, selectedProjectTodoList[ind], taskCardInnerHTML); // debug
+      // gives functionalities to the cards' modal buttons
+      const modal = document.querySelector(`[index="${ind}"] .task--modal`);
+      const modalOpenBtn = document.querySelector(`[index="${ind}"] .modal-open`);
+      const modalCloseBtn = document.querySelector(`[index="${ind}"] .modal-close`);
+      modalOpenBtn.addEventListener('click', () => {
+        modal.showModal();
+        modal.classList.toggle('hidden');
+      });
+      modalCloseBtn.addEventListener('click', () => {
+        modal.close();
+        modal.classList.toggle('hidden');
+      });
     }
   };
   const _renderAddTaskPrompt = function () {

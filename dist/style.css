@@ -281,6 +281,7 @@ label[for="dueDate"]::after {
   height: 3.05rem;
   box-shadow: 0 2px 4px rgb(94, 95, 98, 0.25);
   gap: 1rem;
+  margin-bottom: 1rem;
   transition: all 0.05s ease-in;
 }
 
