@@ -10,3 +10,9 @@ console.log('Selected Project:', ProjectDataHandler.getSelectedProject());
 
 // initializes the AddATaskButton in that project
 ViewModule.initializeAddATaskButton();
+
+const modal = document.querySelector('.task--modal');
+const modalOpenBtn = document.querySelector('.modal-open');
+modalOpenBtn.addEventListener('click', () => {
+  modal.showModal();
+});

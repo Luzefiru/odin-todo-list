@@ -331,3 +331,24 @@ label[for="dueDate"]::after {
   color: var(--surface);
   background-color: var(--primary-variant);
 }
+
+/* task modal styles */
+
+.task--modal {
+  max-width: 50ch;
+  margin: auto;
+  
+}
+
+.task--modal::backdrop {
+  background: rgba(0, 0, 0, .25);
+  backdrop-filter: blur(4px);
+}
+
+.task--modal__exit-btn {
+  width: 1.75rem;
+  height: 1.75rem;
+  mask: url(../res/close-thick.svg) no-repeat center;
+  -webkit-mask: url(../res/close-thick.svg) no-repeat center;
+  background-color: var(--text);
+}
