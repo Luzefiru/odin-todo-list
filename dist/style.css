@@ -114,7 +114,8 @@ aside {
   margin-right: 2rem;
 }
 
-.aside__category__project {
+.aside__category__project,
+.aside__category__project--new {
   all: unset;
   display: flex;
   align-items: center;
@@ -126,13 +127,15 @@ aside {
   cursor: pointer;
 }
 
-.aside__category__project > img {
+.aside__category__project > img,
+.aside__category__project--new > img {
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 0.8rem;
 }
 
-.aside__category__project:hover {
+.aside__category__project:hover,
+.aside__category__project--new:hover {
   background-color: var(--surface-variant);
   border-radius: 8px;
 }
@@ -147,7 +150,7 @@ aside {
 
 /* style for new project button */
 
-.project--new {
+.aside__category__project--new {
   margin-top: 0.5rem;
 }
 
