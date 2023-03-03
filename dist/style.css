@@ -211,6 +211,14 @@ aside {
   align-items: flex-start;
 }
 
+label[for="title"]::after,
+label[for="dueDate"]::after {
+  margin-left: 1.5px;
+  content: '*';
+  color: var(--error);
+  font-size: 0.95rem;
+}
+
 .form--add-task__buttons {
   margin-top: 0.75rem;
   display: flex;
