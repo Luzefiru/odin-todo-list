@@ -157,6 +157,10 @@ const ViewModule = (function () {
       formConfirmBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const nameField = document.querySelector('.form__name-field');
+        if (nameField.value.trim() === '') {
+          console.log('ERROR: Project Name must not be blank!');
+          return;
+        }
         // creates & adds a project to the project object, then selects it
         ProjectDataHandler.addProject(createProject(nameField.value));
         ProjectDataHandler.selectProject(ProjectDataHandler.getProjectList()[nameField.value]);

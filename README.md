@@ -7,7 +7,7 @@ A to-do list web application built with modular JavaScript code to practice Obje
 - Allow the user to 'cross out' or delete a task
 - Allow the user to navigate between projects
 - Allow the user to create new projects
+- Fix Bug: empty string New Project name creating empty project categories
 
 ## TODO
-- Fix Bug: empty string New Project name creating empty project categories
 - Save the data locally using [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
